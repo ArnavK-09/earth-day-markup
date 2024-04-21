@@ -1,0 +1,36 @@
+/* Reset default browser styles  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body base designs  */
+body {
+  background: rgb(99, 203, 233);
+  background: linear-gradient(
+    137deg,
+    rgba(99, 203, 233, 1) 0%,
+    rgba(0, 155, 186, 1) 100%
+  );
+}
+
+/* Hero styles for landing  */
+header {
+  min-height: 100vh;
+  text-align: center;
+  display: grid;
+  place-items: center;
+
+  h1 {
+    font-weight: 600;
+    max-width: 70%;
+    font-size: 5rem;
+    line-height: 1;
+    overflow-wrap: break-word;
+  }
+
+  &::after {
+    content: '<section>land</section>'
+  }
+}
