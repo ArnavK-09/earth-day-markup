@@ -5,14 +5,30 @@
   box-sizing: border-box;
 }
 
+/* HTML css  */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Body base designs  */
 body {
   background: rgb(99, 203, 233);
+  overflow-x: hidden;
   background: linear-gradient(
     137deg,
     rgba(99, 203, 233, 1) 0%,
     rgba(0, 155, 186, 1) 100%
   );
+}
+
+/* Page custom cursor follower  */
+#cursor {
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  position: absolute;
+  opacity: 0.8;
+  border-radius: 100%;
 }
 
 /* Hero styles for landing  */
@@ -21,6 +37,7 @@ header {
   text-align: center;
   display: grid;
   place-items: center;
+  margin-bottom: 5rem;
 
   h1 {
     font-weight: 600;
@@ -30,7 +47,46 @@ header {
     overflow-wrap: break-word;
   }
 
-  &::after {
-    content: '<section>land</section>'
+  section {
+    width: 100vw;
+    height: 100%;
+    background: rgb(225, 170, 95);
+    background: radial-gradient(
+      circle,
+      rgba(225, 170, 95, 1) 0%,
+      rgba(144, 90, 57, 1) 100%
+    );
+  }
+}
+
+/* Facts section  */
+section:has(> article) {
+  padding: 3rem 1.2rem;
+  article {
+    padding: 3rem 1rem;
+    display: grid;
+    place-items: center;
+    border-radius: 1rem;
+    border-width: 0.3rem;
+    border-style: dashed;
+    border-color: #03292c;
+    background: rgb(225, 170, 95);
+    background: radial-gradient(
+      circle,
+      rgba(225, 170, 95, 1) 1%,
+      rgba(144, 90, 57, 1) 35%
+    );
+
+    h2 {
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      font-weight: 870;
+      letter-spacing: 0.025em;
+      text-decoration: underline;
+      text-decoration-style: wavy;
+      text-underline-offset: 8px;
+    }
   }
 }
