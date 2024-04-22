@@ -5,18 +5,35 @@
   box-sizing: border-box;
 }
 
+/* Font For Site  */
+@font-face {
+  font-family: "Forager";
+  src: local("Forager Bold"), local("Forager-Bold"),
+    url("fonts/Forager-Bold.woff2") format("woff2"),
+    url("fonts/Forager-Bold.woff") format("woff"),
+    url("fonts/Forager-Bold.ttf") format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "CloudySunday";
+  src: local("CloudySunday"), local("CloudySunday"),
+    url("fonts/CloudySunday.otf") format("otf"),
+    url("fonts/CloudySunday.ttf") format("truetype");
+  font-style: normal;
+}
+
 /* HTML css  */
 html {
   scroll-behavior: smooth;
+  font-family: Forager;
 }
 
 /* Body base designs  */
 body {
-  background: rgb(99, 203, 233);
   overflow-x: hidden;
   background: linear-gradient(
     137deg,
-    rgba(99, 203, 233, 1) 0%,
+    rgb(42, 171, 207) 0%,
     rgba(0, 155, 186, 1) 100%
   );
 }
@@ -35,58 +52,198 @@ body {
 header {
   min-height: 100vh;
   text-align: center;
+  padding-top: 8rem;
   display: grid;
+  font-family: CloudySunday !important;
   place-items: center;
-  margin-bottom: 5rem;
+  overflow-wrap: break-word;
+  background: linear-gradient(
+    137deg,
+    rgb(50, 154, 238) 0%,
+    rgba(0, 155, 186, 1) 100%
+  );
 
   h1 {
-    font-weight: 600;
+    font-weight: 900;
     max-width: 70%;
-    font-size: 5rem;
+    margin: 5rem 0px;
+    font-size: 2.5rem;
+    color: #ebebeb;
     line-height: 1;
     overflow-wrap: break-word;
+    text-shadow: -2px 2px 0 #000, 2px 2px 0 #000, 2px -2px 0 #000,
+      -2px -2px 0 #000;
+    @media (min-width: 768px) {
+      font-size: 5rem;
+    }
   }
 
   section {
     width: 100vw;
-    height: 100%;
+    height: 40vh;
     background: rgb(225, 170, 95);
+    filter: contrast(1.2);
     background: radial-gradient(
       circle,
       rgba(225, 170, 95, 1) 0%,
       rgba(144, 90, 57, 1) 100%
     );
+
+    .plant {
+      filter: contrast(0.9) !important;
+      left: 4rem;
+      position: absolute;
+      top: -1.5rem;
+    }
   }
 }
 
 /* Facts section  */
 section:has(> article) {
-  padding: 3rem 1.2rem;
+  background: linear-gradient(
+    to bottom,
+    rgb(35, 116, 182) 0%,
+    rgb(19, 61, 139) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
   article {
-    padding: 3rem 1rem;
     display: grid;
     place-items: center;
-    border-radius: 1rem;
+    border-radius: 2rem;
     border-width: 0.3rem;
     border-style: dashed;
-    border-color: #03292c;
+    border-color: #052e16;
     background: rgb(225, 170, 95);
     background: radial-gradient(
       circle,
-      rgba(225, 170, 95, 1) 1%,
+      rgba(225, 170, 95, 1) 10%,
       rgba(144, 90, 57, 1) 35%
     );
 
+    @media (min-width: 768px) {
+      font-size: 4.25rem;
+      min-height: 60vh;
+      padding: 3rem 1rem;
+    }
+
+    p,
+    ul {
+      max-width: 90%;
+      text-align: justify;
+      margin: 2rem 0px;
+      font-size: 1rem;
+      letter-spacing: 0.025em;
+      @media (min-width: 768px) {
+        margin-top: 0.3rem;
+        font-size: 1.9rem;
+        max-width: 60%;
+      }
+    }
+
     h2 {
-      margin-top: 0.5rem;
-      margin-bottom: 2rem;
-      font-size: 2.25rem;
-      line-height: 2.5rem;
+      margin: 2rem 0px;
+      color: #052e16;
+      text-shadow: -2px 2px 0 #fff, 2px 2px 0 #fff, 2px -2px 0 #fff,
+        -2px -2px 0 #fff;
+      letter-spacing: 0.05em;
+      font-size: 2rem;
+      font-family: CloudySunday;
       font-weight: 870;
       letter-spacing: 0.025em;
+      overflow-wrap: break-word;
+      max-width: 90%;
+      margin-bottom: 0.6rem;
+      text-align: center;
+      line-height: 2.8rem;
       text-decoration: underline;
       text-decoration-style: wavy;
       text-underline-offset: 8px;
+
+      @media (min-width: 768px) {
+        font-size: 4.25rem;
+        line-height: 6rem;
+        max-width: 77%;
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+}
+
+/* CTO  */
+.action-call {
+  width: 90vw;
+  display: grid;
+  margin: 3rem auto;
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+  background-color: #ffffff21;
+  backdrop-filter: blur(12px);
+  place-items: center;
+
+  h2 {
+    text-align: center;
+    letter-spacing: 0.05em;
+    font-size: 2.25rem;
+    font-family: CloudySunday;
+    font-weight: 870;
+    text-shadow: -4px 4px 0 #052e16, 4px 4px 0 #052e16, 4px -4px 0 #052e16,
+    -4px -4px 0 #052e16;
+    color: #fff;
+    letter-spacing: 0.025em;
+    max-width: 95%;
+
+    @media (min-width: 768px) {
+      font-size: 4.25rem;
+      line-height: 6rem;
+      max-width: 77%;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  p {
+    text-align: center;
+    opacity: 0.9;
+    max-width: 90%;
+    text-align: justify;
+    margin: 2rem 0px;
+    font-size: 1rem;
+    letter-spacing: 0.025em;
+    @media (min-width: 768px) {
+      margin-top: 0.3rem;
+      font-size: 1.9rem;
+      max-width: 60%;
+    }
+  }
+
+  a {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+    border-radius: 2.5rem;
+    background: linear-gradient(
+      137deg,
+      #052e16 0%,
+      #076e32 100%
+    );
+    color: white;
+    font-family: CloudySunday;
+    text-decoration: none;
+    font-size: 2rem;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }
